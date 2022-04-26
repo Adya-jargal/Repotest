@@ -1,8 +1,4 @@
-# ORG 1000H
-	   MVI A,00
-	   LHLD 2000
-	   CMP L
-	   JZ DUUSGAH
+
 
 AGAIN:	   PUSH H
 	   MVI H,00
