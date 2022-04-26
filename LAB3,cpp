@@ -1,0 +1,38 @@
+# ORG 1000H
+	   MVI A,00
+	   LHLD 2000
+	   CMP L
+	   JZ DUUSGAH
+
+AGAIN:	   PUSH H
+	   MVI H,00
+	   MVI L,00
+	   CALL KB
+	   MOV D,H
+	   MOV E,L
+	   POP H
+	   MOV A,E
+	   CMP L
+	   JNZ AGAIN
+	   MOV A,D
+	   CMP H
+	   JNZ AGAIN
+
+DUUSGAH:	   MOV A,C
+	   STA 2002
+	   MOV A,B
+	   STA 2003
+	   HLT
+
+KB:	   MVI A,00
+	   INX B
+	   MOV D,B
+	   MOV E,C
+	   PUSH B
+
+URJIH:              DAD D 
+                           DCX B
+                           CMP C
+                           JNZ URJIH
+                           POP B
+                           RET              
